@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	play.addEventListener("click", function() {
 		video.play()
 		console.log("Video Playing")
-		volume.textContent = "100%";
+		volume.textContent = +video.volume*100 +"%";
 
 	})
 })
@@ -97,7 +97,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		if (video.muted) {
 			volume.textContent = "Muted";
 		} else {
-			volume.textContent = "100%";
+			volume.textContent = +video.volume*100 +"%";
 		}
 	})
 })
@@ -110,7 +110,13 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	slider.addEventListener("input", function() {
 		video.volume = slider.value / 100
-		volume.textContent = +video.volume*100 +"%";
+		//volume.textContent = +video.volume*100 +"%";
+
+		if (video.muted) {
+			volume.textContent = "Muted";
+		} else {
+			volume.textContent = +video.volume*100 +"%";
+		}
 	})
 })
 
