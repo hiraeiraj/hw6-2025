@@ -96,8 +96,10 @@ window.addEventListener("DOMContentLoaded", function(){
 
 		if (video.muted) {
 			volume.textContent = "Muted";
+			mute.textContent = "Unmute"
 		} else {
 			volume.textContent = +video.volume*100 +"%";
+			mute.textContent = "Mute"
 		}
 	})
 })
