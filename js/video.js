@@ -89,7 +89,6 @@ window.addEventListener("DOMContentLoaded", function(){
 window.addEventListener("DOMContentLoaded", function(){
 	mute=this.document.querySelector("#mute")
 	video=this.document.querySelector("#player1")
-	volume=this.document.querySelector("#volume")
 
 	mute.addEventListener("click", function() {
 		video.muted = !video.muted
@@ -99,7 +98,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			volume.textContent = "Muted";
 			mute.textContent = "Unmute"
 		} else {
-			volume.textContent = video.volume * 100 + "%";
+			volume.textContent = +video.volume*100 +"%";
 			mute.textContent = "Mute"
 		}
 	})
@@ -110,14 +109,13 @@ window.addEventListener("DOMContentLoaded", function(){
 window.addEventListener("DOMContentLoaded", function(){
 	slider=this.document.querySelector("#slider")
 	video=this.document.querySelector("#player1")
-	volume=this.document.querySelector("#volume")
 
 	slider.addEventListener("input", function() {
 		video.volume = slider.value / 100
 		if (video.muted) {
 			volume.textContent = "Muted";
 		} else {
-			volume.textContent = video.volume * 100 + "%";
+			volume.textContent = +zvideo.volume*100 +"%";
 		}
 	})
 })
