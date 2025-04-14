@@ -98,7 +98,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			volume.textContent = "Muted";
 			mute.textContent = "Unmute"
 		} else {
-			volume.textContent = +video.volume*100 +"%";
+			volume.textContent = video.volume*100 +"%";
 			mute.textContent = "Mute"
 		}
 	})
@@ -112,12 +112,10 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	slider.addEventListener("input", function() {
 		video.volume = slider.value / 100
-		//volume.textContent = +video.volume*100 +"%";
-
 		if (video.muted) {
 			volume.textContent = "Muted";
 		} else {
-			volume.textContent = +video.volume*100 +"%";
+			volume.textContent = video.volume*100 +"%";
 		}
 	})
 })
